@@ -15,4 +15,6 @@
 
 .iframe-container iframe.Graph {
     height: 380px;
+    width: 100%; /* 追加: 幅を100%に設定して縮小表示 */
+    max-width: 100%; /* 追加: 最大幅を100%に設定 */
 }
