@@ -1,38 +1,189 @@
-.App {
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #0070FF;
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
+  --card-background: #ffffff;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: var(--card-background);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+h2 {
+  color: var(--primary-color);
   text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  font-size: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+label svg {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+input[type="date"],
+select {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="date"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.radio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.radio-option {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #f1f2f6;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.radio-option:hover {
+  background-color: #d2d3db;
+}
+
+.radio-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.radio-option input[type="radio"] {
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.radio-option svg {
+  font-size: 1.5rem;
+}
+
+.radio-option span {
+  font-size: 0.8rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+button {
+  background-color: var(--secondary-color);
   color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+button svg {
+  margin-right: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background-color: #27ae60;
+}
+
+#response {
+  margin-top: 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  background-color: #F1F2F6;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+a svg {
+  margin-right: 0.5rem;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+/* 既存のApp.cssの内容をここに保持 */
+
+/* グラフコンポーネントのスタイルを追加 */
+.iframe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reps {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.reps iframe {
+  margin: 0 5px;
+}
+
+iframe {
+  margin: 5px 0;
 }
