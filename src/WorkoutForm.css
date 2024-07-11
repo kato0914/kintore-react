@@ -16,6 +16,9 @@ body {
     padding: 20px;
     background-color: #f5f5f5;
     border-radius: 10px;
+    box-sizing: border-box; /* 追加: はみ出しを防ぐ */
+    max-height: 100vh; /* 追加: 画面の高さに収まるようにする */
+    overflow-y: auto; /* 追加: 必要に応じて縦スクロールを許可 */
   }
   
   h1 {
