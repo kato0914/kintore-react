@@ -10,7 +10,7 @@ function Graph() {
         <iframe title="Graph 3" width="102" height="50" seamless frameBorder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=1379746584&amp;format=image"></iframe>
       </div>
       <iframe title="Graph 4" width="102" height="50" seamless frameBorder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=1433934483&amp;format=image"></iframe>
-      <iframe title="Graph 5" width="102" height="50" seamless frameBorder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=1210434199&amp;format=image"></iframe>
+      <iframe title="Graph 5" width="102" height="50" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=1210434199&amp;format=interactive"></iframe>
       <iframe class="Graph" title="Graph 6" width="371" height="380" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=197194374&amp;format=interactive"></iframe>
     </div>
   );
