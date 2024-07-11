@@ -1,0 +1,12 @@
+.iframe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 追加: 中央寄せ */
+    padding: 10px;
+    box-sizing: border-box; /* 追加: はみ出しを防ぐ */
+}
+
+.iframe-container iframe {
+    max-width: 100%; /* 追加: 画面幅に収まるようにする */
+    height: auto; /* 追加: 高さを自動調整 */
+}
