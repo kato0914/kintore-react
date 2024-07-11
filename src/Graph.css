@@ -13,6 +13,6 @@
     border: none; /* 枠線をなくす */
 }
 
-.iframe-container iframe .Graph {
+.iframe-container iframe.Graph {
     height: 380px;
 }
