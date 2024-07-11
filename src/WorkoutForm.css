@@ -9,7 +9,7 @@ body {
   }
   
   .container {
-    max-width: 500px;
+    width: 400px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f5f5f5;
@@ -41,6 +41,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    box-sizing: border-box; /* 追加: はみ出しを防ぐ */
   }
   
   .workout-types {
@@ -59,6 +60,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+  }
+
+  .response-message {
+    text-align: center;
   }
   
   .workout-types label.selected {
@@ -97,6 +102,10 @@ body {
     background-color: #0066cc;
   }
   
+  .response-message {
+    text-align: center;
+  }
+
   .success-message {
     margin-top: 15px;
     padding: 10px;
