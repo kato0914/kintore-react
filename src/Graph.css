@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box; /* 追加: はみ出しを防ぐ */
+    overflow-x: hidden; /* 横方向のはみ出しを防ぐ */
 }
 
 .iframe-container iframe {
