@@ -16,6 +16,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './WorkoutForm.css';
 
+// 追加: 日付を当日に更新する関数
+document.addEventListener('DOMContentLoaded', (event) => {
+    const dateInput = document.querySelector('input[type="date"]');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today; // 日付を当日に設定
+    }
+});
+
 function WorkoutForm() {
   const [formData, setFormData] = useState({
     date: '',
