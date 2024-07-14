@@ -12,6 +12,8 @@ function Graph() {
       <iframe title="Graph 4" width="102" height="50" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=1433934483&amp;format=interactive"></iframe>
       <iframe title="Graph 5" width="102" height="50" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=1210434199&amp;format=interactive"></iframe>
       <iframe class="Graph" title="Graph 6" width="371" height="380" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=197194374&amp;format=interactive"></iframe>
+      <iframe class="Graph" title="Graph 7" width="371" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=54284984&amp;format=interactive"></iframe>
+      <iframe class="Graph" title="Graph 8" width="371" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6fHOobGijUdu7rc2ESvLpYG_lxftqaKdu5_F0y48KAEGqx7nDilV1DophtmjcUG3vqCQ0JWHcK2VR/pubchart?oid=28998947&amp;format=interactive"></iframe>
     </div>
   );
 }
