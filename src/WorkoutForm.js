@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => { // DOMが完全に読
     }
 });
 
-function WorkoutForm() { // WorkoutFormコンポーネントを定義
+function WorkoutForm() {
   const [formData, setFormData] = useState({ // フォームデータの状態を管理するuseStateフックを使用
     date: '', // 日付フィールドの初期値
     weight: '', // 重さフィールドの初期値
@@ -42,10 +42,6 @@ function WorkoutForm() { // WorkoutFormコンポーネントを定義
       ...savedFormData, // 保存されたフォームデータをマージ
       date: today // 日付フィールドを今日の日付に設定
     }));
-
-    return () => { // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数を返す
-      localStorage.setItem('workoutFormData', JSON.stringify(formData)); // フォームデータをローカルストレージに保存
-    };
   }, []);
 
   useEffect(() => { // フォームデータが変更されたときに実行されるuseEffectフックを使用
@@ -85,39 +81,39 @@ function WorkoutForm() { // WorkoutFormコンポーネントを定義
   ];
 
   return ( // コンポーネントのJSXを返す
-    <div className="container"> // コンテナのdiv要素
-      <h1><FontAwesomeIcon icon={faDumbbell} /> 筋トレ記録・分析アプリ</h1> // タイトルとダンベルアイコン
-      <form onSubmit={handleSubmit}> // フォーム要素、送信時にhandleSubmit関数を実行
-        <div className="form-group"> // フォームグループのdiv要素
-          <label><FontAwesomeIcon icon={faCalendarAlt} /> 日付:</label> // ラベルとカレンダーアイコン
-          <input type="date" name="date" value={formData.date} onChange={handleChange} required /> // 日付入力フィールド
+    <div className="container">
+      <h1><FontAwesomeIcon icon={faDumbbell} /> 筋トレ記録・分析アプリ</h1> 
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label><FontAwesomeIcon icon={faCalendarAlt} /> 日付:</label>
+          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
         </div>
         
-        <div className="form-group"> // フォームグループのdiv要素
-          <label><FontAwesomeIcon icon={faWeightHanging} /> 重さ (kg):</label> // ラベルと重りアイコン
-          <select name="weight" value={formData.weight} onChange={handleChange} required> // 重さ選択フィールド
-            <option value="" disabled>選択してください</option> // デフォルトの選択肢
-            {[0, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100].map(weight => ( // 重さの選択肢をループで生成
-              <option key={weight} value={weight}>{weight} kg</option> // 重さの選択肢
+        <div className="form-group">
+          <label><FontAwesomeIcon icon={faWeightHanging} /> 重さ (kg):</label>
+          <select name="weight" value={formData.weight} onChange={handleChange} required>
+            <option value="" disabled>選択してください</option>
+            {[0, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100].map(weight => (
+              <option key={weight} value={weight}>{weight} kg</option>
             ))}
           </select>
         </div>
         
-        <div className="form-group"> // フォームグループのdiv要素
-          <label><FontAwesomeIcon icon={faRedo} /> 回数:</label> // ラベルとリロードアイコン
-          <select name="reps" value={formData.reps} onChange={handleChange} required> // 回数選択フィールド
-            <option value="" disabled>選択してください</option> // デフォルトの選択肢
-            {[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50].map(reps => ( // 回数の選択肢をループで生成
-              <option key={reps} value={reps}>{reps} 回</option> // 回数の選択肢
+        <div className="form-group">
+          <label><FontAwesomeIcon icon={faRedo} /> 回数:</label>
+          <select name="reps" value={formData.reps} onChange={handleChange} required>
+            <option value="" disabled>選択してください</option>
+            {[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50].map(reps => (
+              <option key={reps} value={reps}>{reps} 回</option>
             ))}
           </select>
         </div>
         
-        <div className="form-group"> // フォームグループのdiv要素
-          <label><FontAwesomeIcon icon={faDumbbell} /> 筋トレの種類:</label> // ラベルとダンベルアイコン
-          <div className="workout-types"> // 筋トレの種類を表示するdiv要素
-            {workoutTypes.map(type => ( // 筋トレの種類をループで生成
-              <label key={type.name} className={formData.type === type.name ? 'selected' : ''}> // ラベル要素、選択されている場合はクラスを追加
+        <div className="form-group">
+          <label><FontAwesomeIcon icon={faDumbbell} /> 筋トレの種類:</label>
+          <div className="workout-types">
+            {workoutTypes.map(type => (
+              <label key={type.name} className={formData.type === type.name ? 'selected' : ''}>
                 <input
                   type="radio"
                   name="type"
@@ -126,25 +122,25 @@ function WorkoutForm() { // WorkoutFormコンポーネントを定義
                   onChange={handleChange}
                   required
                 />
-                <FontAwesomeIcon icon={type.icon} /> // 筋トレの種類のアイコン
-                <span>{type.name}</span> // 筋トレの種類の名前
+                <FontAwesomeIcon icon={type.icon} />
+                <span>{type.name}</span>
               </label>
             ))}
           </div>
         </div>
         
-        <button type="submit" className="submit-button"> // 送信ボタン
-          <FontAwesomeIcon icon={faSave} /> 記録する // 保存アイコンとボタンのテキスト
+        <button type="submit" className="submit-button">
+          <FontAwesomeIcon icon={faSave} /> 記録する
         </button>
       </form>
       
-      {response && <div className="response-message">{response}</div>} // レスポンスメッセージを表示するdiv要素
+      {response && <div className="response-message">{response}</div>}
       
-      <a href="/graph" className="graph-link"> // グラフページへのリンク
-        <FontAwesomeIcon icon={faChartLine} /> 進捗グラフを見る // チャートラインアイコンとリンクのテキスト
+      <a href="/graph" className="graph-link">
+        <FontAwesomeIcon icon={faChartLine} /> 進捗グラフを見る
       </a>
     </div>
-  );
+  ); // JSXの閉じタグを追加
 }
 
 export default WorkoutForm; // WorkoutFormコンポーネントをエクスポート
