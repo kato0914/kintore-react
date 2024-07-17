@@ -27,11 +27,16 @@ function WorkoutForm() {
 
   useEffect(() => { // コンポーネントがマウントされたときに実行されるuseEffectフックを使用
     const savedFormData = JSON.parse(localStorage.getItem('workoutFormData')) || {}; // ローカルストレージから保存されたフォームデータを取得
-    const today = new Date().toISOString().split('T')[0]; // 今日の日付を取得し、ISO形式の文字列に変換
+    
+    // ローカルタイムゾーンの日付を取得
+    const today = new Date();
+    today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    const localToday = today.toISOString().split('T')[0];
+    
     setFormData(prevState => ({ // フォームデータの状態を更新
       ...prevState, // 以前の状態を保持
       ...savedFormData, // 保存されたフォームデータをマージ
-      date: today // 日付フィールドを今日の日付に設定
+      date: localToday // 日付フィールドをローカルタイムゾーンの日付に設定
     }));
   }, []);
 
@@ -56,7 +61,7 @@ function WorkoutForm() {
         body: formDataToSend // リクエストボディにフォームデータを設定
       });
       const data = await response.json(); // レスポンスをJSON形式に変換
-      setResponse(data.result === "success" ? "デ��タが正常に送信されました。" : `エラーが発生しました: ${data.message}`); // レスポンスメッセージを設定
+      setResponse(data.result === "success" ? "デタが正常に送信されました。" : `エラーが発生しました: ${data.message}`); // レスポンスメッセージを設定
     } catch (error) {
       setResponse(`エラーが発生しました: ${error.message}`); // エラーメッセージを設定
     }
