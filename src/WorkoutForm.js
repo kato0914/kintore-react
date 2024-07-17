@@ -16,15 +16,6 @@ import {  // FontAwesomeのアイコンをインポート
 } from '@fortawesome/free-solid-svg-icons';
 import './WorkoutForm.css'; // WorkoutFormのスタイルシートをインポート
 
-// 追加: 日付を当日に更新する関数
-document.addEventListener('DOMContentLoaded', (event) => { // DOMが完全に読み込まれたときに実行されるイベントリスナーを追加
-    const dateInput = document.querySelector('input[type="date"]'); // 日付入力フィールドを取得
-    if (dateInput) { // 日付入力フィールドが存在する場合
-        const today = new Date().toISOString().split('T')[0]; // 今日の日付を取得し、ISO形式の文字列に変換
-        dateInput.value = today; // 日付を当日に設定
-    }
-});
-
 function WorkoutForm() {
   const [formData, setFormData] = useState({ // フォームデータの状態を管理するuseStateフックを使用
     date: '', // 日付フィールドの初期値
@@ -65,7 +56,7 @@ function WorkoutForm() {
         body: formDataToSend // リクエストボディにフォームデータを設定
       });
       const data = await response.json(); // レスポンスをJSON形式に変換
-      setResponse(data.result === "success" ? "データが正常に送信されました。" : `エラーが発生しました: ${data.message}`); // レスポンスメッセージを設定
+      setResponse(data.result === "success" ? "デ��タが正常に送信されました。" : `エラーが発生しました: ${data.message}`); // レスポンスメッセージを設定
     } catch (error) {
       setResponse(`エラーが発生しました: ${error.message}`); // エラーメッセージを設定
     }
@@ -81,7 +72,7 @@ function WorkoutForm() {
   ];
 
   return ( // コンポーネントのJSXを返す
-    <div className="container">
+    <div className="container"> {/* コンテナのdiv要素 */}
       <h1><FontAwesomeIcon icon={faDumbbell} /> 筋トレ記録・分析アプリ</h1> 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
