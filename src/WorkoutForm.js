@@ -33,6 +33,9 @@ function WorkoutForm() {
     today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
     const localToday = today.toISOString().split('T')[0];
     
+    // 現在時刻をコンソールに表示
+    console.log("現在時刻:", today.toString());
+    
     setFormData(prevState => ({ // フォームデータの状態を更新
       ...prevState, // 以前の状態を保持
       ...savedFormData, // 保存されたフォームデータをマージ
