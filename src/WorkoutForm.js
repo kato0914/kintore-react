@@ -24,7 +24,7 @@ const getCurrentDate = () => {
 };
 
 function WorkoutForm() {
-  const [formData, setFormData] = useState({ // フォームデータの状態を管理するuseStateフックを使用
+  const [formData, setFormData] = useState({ // フォー���データの状態を管理するuseStateフックを使用
     date: '', // 日付フィールドの初期値
     weight: '', // 重さフィールドの初期値
     reps: '', // 回数フィールドの初期値
@@ -49,7 +49,7 @@ function WorkoutForm() {
     
     setFormData(prevState => ({ // フォームデータの状態を更新
       ...prevState, // 以前の状態を保持
-      ...savedFormData, // 保存されたフォームデータをマージ
+      ...savedFormData, // 保���されたフォームデータをマージ
       date: localToday // 日付フィールドをローカルタイムゾーンの日付に設定
     }));
   }, []);
