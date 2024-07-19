@@ -16,6 +16,13 @@ import {  // FontAwesomeのアイコンをインポート
 } from '@fortawesome/free-solid-svg-icons';
 import './WorkoutForm.css'; // WorkoutFormのスタイルシートをインポート
 
+const getCurrentDate = () => {
+  const today = new Date();
+  return new Date(today.getTime() - (today.getTimezoneOffset() * 60000))
+    .toISOString()
+    .split('T')[0];
+};
+
 function WorkoutForm() {
   const [formData, setFormData] = useState({ // フォームデータの状態を管理するuseStateフックを使用
     date: '', // 日付フィールドの初期値
@@ -50,6 +57,23 @@ function WorkoutForm() {
   useEffect(() => { // フォームデータが変更されたときに実行されるuseEffectフックを使用
     localStorage.setItem('workoutFormData', JSON.stringify(formData)); // フォームデータをローカルストレージに保存
   }, [formData]);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        const localToday = getCurrentDate();
+        setFormData(prevState => ({
+          ...prevState,
+          date: localToday
+        }));
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
 
   const handleChange = (e) => { // 入力フィールドが変更されたときに実行される関数を定義
     const { name, value } = e.target; // 入力フィールドの名前と値を取得
